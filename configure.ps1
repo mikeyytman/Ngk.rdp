@@ -4,7 +4,7 @@
 Write-Output "[INFO] Script started!"
 
 # First we download ngrok
-Invoke-WebRequest -Uri https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+Invoke-WebRequest -Uri https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
 
 # Then we unzip it
 Expand-Archive -LiteralPath '.\ngrok.zip'
@@ -19,5 +19,5 @@ Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
 # Change password to the one we set-up as RDP_PASSWORD on our repo settings.
-Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "$env:RDP_PASSWORD" -Force)
+Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "$env:Techwithabi2021$" -Force)
 Exit
